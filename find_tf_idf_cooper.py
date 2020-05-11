@@ -100,6 +100,12 @@ def finds_list_of_all_documents_terms_values(list_of_all_documents):
 
 
 def adding_new_list_to_all_documents_terms(list_of_all_documents_terms, new_string):
+    '''
+    this func adds the new text [[term,term...],label] to the list of all documents list of terms and label
+    :param list_of_all_documents_terms:
+    :param new_string:
+    :return:
+    '''
     global new_list_of_all_documents_terms
     new_list_of_all_documents_terms = list_of_all_documents_terms
     new_list_of_all_documents_terms.append(parsing_new_string_to_list(new_string))
@@ -107,6 +113,13 @@ def adding_new_list_to_all_documents_terms(list_of_all_documents_terms, new_stri
 
 
 def creating_list_of_new_document_terms_and_values(new_string_list, new_string, list_of_all_documents):
+    '''
+    this func creates a list [[term,score,""][term,score,""][term,score,""]...] of the new text the user input
+    :param new_string_list:
+    :param new_string:
+    :param list_of_all_documents:
+    :return:
+    '''
     global list_of_new_document_terms_and_values
     list_of_new_document_terms_and_values = []
     for term in new_string_list[0]:
@@ -118,6 +131,12 @@ def creating_list_of_new_document_terms_and_values(new_string_list, new_string, 
 
 
 def finding_label_of_new_file(new_string, list_of_all_documents):
+    '''
+    this func finds the label(subject) of the new text the user inputs
+    :param new_string: a list [new text(after cleaning) the user inputs,""]
+    :param list_of_all_documents:a list [[text,label][text,label]]
+    :return:
+    '''
     num_of_sport_score = 0
     num_of_medicine_score = 0
     creating_list_of_new_document_terms_and_values(parsing_new_string_to_list(new_string), new_string,
@@ -140,7 +159,7 @@ def finding_label_of_new_file(new_string, list_of_all_documents):
         new_text_subject = "medicine"
     else :
         new_text_subject = "unrecognized"
-    print(f"the subject of the new text is: {new_text_subject}")
+    return(f"the subject of the new text is: {new_text_subject}")
 
 
 

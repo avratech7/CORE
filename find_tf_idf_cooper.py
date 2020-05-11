@@ -145,17 +145,17 @@ def finding_label_of_new_file(new_string, list_of_all_documents):
     finds_list_of_all_documents_terms_values(list_of_all_documents)
     for term in list_of_new_document_terms_and_values:
         for term2 in list_of_all_terms_and_values:
-            if (term[0] == term2[0] and term[1] - term2[1] < 0.1 and term[1] - term2[1] > -0.1 and term2[2] == "sport"):
+            if (term[0] == term2[0] and term[1] - term2[1] < 0.4*term2[1] and term[1] - term2[1] > -0.4*term2[1] and term2[2] == "sport"):
                 num_of_sport_score += 1
-            if (term[0] == term2[0] and term[1] - term2[1] < 0.1 and term[1] - term2[1] > -0.1 and term2[
+            if (term[0] == term2[0] and term[1] - term2[1] < 0.4*term2[1] and term[1] - term2[1] > -0.4*term2[1] and term2[
                 2] == "medicine"):
                 num_of_medicine_score += 1
     print(num_of_sport_score)
     print(num_of_medicine_score)
     new_text_subject = ""
-    if num_of_sport_score/num_of_medicine_score > 1.05:
+    if num_of_sport_score/num_of_medicine_score > 1.3:
         new_text_subject = "sport"
-    elif num_of_medicine_score/num_of_sport_score >1.6:
+    elif num_of_medicine_score/num_of_sport_score >1.3:
         new_text_subject = "medicine"
     else :
         new_text_subject = "unrecognized"

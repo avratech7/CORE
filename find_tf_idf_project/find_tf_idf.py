@@ -299,9 +299,9 @@ def finding_label_of_new_file(new_string, list_of_all_documents):
             if (term[0] == term2[0] and abs(term[1] - term2[1]) < 0.8 and term2[2] == "medicine"):
                 num_of_medicine_score += 1
 
-    print(num_of_sport_score)
+    print(f"sport score: {num_of_sport_score}")
 
-    print(num_of_medicine_score)
+    print(f"medicine score: {num_of_medicine_score}")
 
     new_text_subject = ""
 
